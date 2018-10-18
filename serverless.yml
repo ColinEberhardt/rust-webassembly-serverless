@@ -1,0 +1,15 @@
+service: rust-lambda-serverless 
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-2
+
+
+functions:
+  hello:
+    handler: pkg/rust_lambda.handler
+    events:
+     - http:
+         path: greet
+         method: get
