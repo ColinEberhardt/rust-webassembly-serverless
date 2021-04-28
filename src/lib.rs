@@ -9,8 +9,8 @@ use wasm_bindgen::prelude::*;
 
 pub fn response(status: u8, body: String) -> Object {
   let object = Object::new();
-  Reflect::set(&object.as_ref(), &"statusCode".into(), &status.into());
-  Reflect::set(&object.as_ref(), &"body".into(), &body.into());
+  Reflect::set(&object.as_ref(), &"statusCode".into(), &status.into()).unwrap();
+  Reflect::set(&object.as_ref(), &"body".into(), &body.into()).unwrap();
   return object;
 }
 
